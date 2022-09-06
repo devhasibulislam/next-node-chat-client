@@ -6,3 +6,9 @@
 ## Technologies
 
 ## Privileges
+### Make own
+```bash
+git clone https://github.com/hasibulislam999/next-node-chat-client.git
+cd next-chat-client
+npm i -f
+```
