@@ -1,0 +1,19 @@
+.user {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+}
+
+.chatAvatar {
+  object-fit: cover;
+}
+
+.stackUsers {
+  background-color: #e9f2fe;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.stackUsers:hover {
+  box-shadow: 0px 1px 1px 0px rgba(173, 168, 168, 1);
+}
