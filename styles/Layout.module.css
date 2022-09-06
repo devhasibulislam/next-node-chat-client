@@ -1,0 +1,39 @@
+.sidebarContent {
+  width: fit-content;
+}
+
+.chatAvatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userStack {
+  column-gap: 1.5rem;
+}
+
+.removeUser {
+  margin-bottom: 0;
+  height: 35px;
+  width: 35px;
+  padding: 0.5rem;
+}
+
+.userSelect {
+  transition: all 0.5s;
+  background-color: #f3f7fc;
+  /* background-color: #e9f2fe; */
+  border-radius: 5px;
+}
+
+.userSelect:hover {
+  box-shadow: 0px 1px 1px 0px rgba(173, 168, 168, 1);
+}
+
+@media (max-width: 600px) {
+  .visibility {
+    display: none;
+  }
+  .removeUser {
+    display: none;
+  }
+}
