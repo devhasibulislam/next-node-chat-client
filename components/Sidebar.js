@@ -3,10 +3,13 @@ import Loading from './Loading';
 import styles from '../styles/Sidebar.module.css';
 import { Nav } from 'react-bootstrap';
 import Image from 'next/image';
+import Window from './Window';
+import Users from './Users';
 
 const Sidebar = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [modalShow, setModalShow] = React.useState(false);
 
     useEffect(() => {
         setLoading(true);
@@ -31,7 +34,7 @@ const Sidebar = () => {
                                         alt={`dta.last_name`}
                                         height={50}
                                         width={50}
-                                        className={styles.chatAvatar}
+                                        className={`${styles.chatAvatar} rounded-circle`}
                                         role="button"
                                     />
                                     <p className={`mb-0 ${styles.visibility}`}> • {dta.first_name} • </p>
@@ -47,8 +50,9 @@ const Sidebar = () => {
             }
             <div
                 className='d-flex align-items-center justify-content-center position-absolute bottom-0 start-0 w-100 py-3 rounded-end text-white'
-                style={{backgroundColor: "#808080"}}
+                style={{ backgroundColor: "#808080" }}
                 role="button"
+                onClick={() => setModalShow(true)}
             >
                 <p className={`${styles.addUser} bg-white text-black rounded-circle mb-0`}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
@@ -57,6 +61,19 @@ const Sidebar = () => {
                 </p>
                 <p className={`${styles.visibility} mb-0 ms-3 fs-5 fw-normal font-monospace`}>Add Conversation</p>
             </div>
+
+            {/* modal window */}
+            {
+                modalShow &&
+                <Window
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    title="Add new conversion"
+                    child=<Users
+                        onHide={() => setModalShow(false)}
+                    />
+                />
+            }
         </section>
     );
 }
