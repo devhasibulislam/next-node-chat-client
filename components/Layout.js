@@ -5,7 +5,9 @@ const Layout = ({ children }) => {
     return (
         <section className="d-flex vw-100 vh-100">
             {/* sidebar */}
-            <Sidebar />
+            <section className='position-relative'>
+                <Sidebar />
+            </section>
 
             {/* content */}
             <section>
