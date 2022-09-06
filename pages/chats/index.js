@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from '../../components/Header';
 
-const Chat = () => {
+const Chats = () => {
     return (
         <section>
             <Header title="Conversations" />
@@ -12,4 +12,4 @@ const Chat = () => {
         </section>
     );
 }
-export default Chat;
+export default Chats;
