@@ -6,11 +6,13 @@ import Image from 'next/image';
 import Window from './Window';
 import Users from './Users';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Sidebar = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [modalShow, setModalShow] = React.useState(false);
+    const router = useRouter();
 
     useEffect(() => {
         setLoading(true);
@@ -39,7 +41,7 @@ const Sidebar = () => {
                                                 width={50}
                                                 className={`${styles.chatAvatar} rounded-circle`}
                                             />
-                                            <p className={`mb-0 ${styles.visibility}`}> • {dta.first_name} • </p>
+                                            <p className={`mb-0 ${styles.visibility} ${(router.asPath ===  `/chats/${dta._id}`) && "border border-3 pb-1 border-bottom border-top-0 border-start-0 border-end-0"}`}> • {dta.first_name} • </p>
                                         </a>
                                     </Link>
                                     <p className={`${styles.removeUser} shadow d-flex justify-content-center align-items-center bg-white rounded-circle mb-0`} role="button">
