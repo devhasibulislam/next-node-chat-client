@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
             </section>
 
             {/* content */}
-            <section style={{ padding: "1rem 2rem" }}>
+            <section style={{ padding: "2rem" }}>
                 {children}
             </section>
         </section >
