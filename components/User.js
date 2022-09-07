@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 const User = ({ matchedData }) => {
     return (
         <section>
-            <Card style={{ width: '19rem' }}>
+            <Card style={{ width: 'fit-content' }}>
                 <Card.Img variant="top" src={matchedData?.avatar} />
                 <Card.Body>
                     <Card.Title>{matchedData?.first_name} {matchedData?.last_name}</Card.Title>
