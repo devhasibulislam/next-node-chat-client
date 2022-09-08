@@ -12,7 +12,7 @@ const Chats = () => {
                 <div className='d-flex flex-column justify-content-center align-items-center h-100 w-100'>
                     <Image
                         src="/failed.png"
-                        alt="failed unicorn"
+                        alt="failed unicorn"    
                         height={400}
                         width={409}
                     />
