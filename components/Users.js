@@ -20,8 +20,8 @@ const Users = (props) => {
     }, []);
 
     // RegEx
-    const condition = new RegExp(keyword);
-    const result = data?.filter(dta => condition.test(dta.email || dta.first_name || dta.last_name));
+    const condition = new RegExp(keyword, "gi");
+    const result = data?.filter(dta => condition.test(dta.first_name));
 
     return (
         <section
