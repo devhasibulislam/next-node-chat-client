@@ -7,7 +7,7 @@ function useUserData() {
         refreshWhenHidden: true,
         refreshWhenOffline: true,
         shouldRetryOnError: true,
-        refreshInterval: 1000
+        refreshInterval: 1
     });
 
     if (error) return <div>failed to load</div>
