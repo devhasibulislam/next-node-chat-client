@@ -1,8 +1,36 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [redirect, setRedirect] = useState(false);
+
+    function handleLoginUser(event) {
+        event.preventDefault();
+
+        const userInfo = {
+            email, password
+        };
+        fetch("http://localhost:5000/users", {
+            method: "PATCH",
+            headers: {
+                "accept": "application/json",
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(userInfo)
+        })
+            .then(res => res.json())
+            .then(data => setRedirect(data.success))
+            .catch(error => console.log(error))
+
+        event.target.reset();
+    }
+
+    if (redirect)
+        location.href = "/chats"
+
     return (
         <section>
             <Header title="Login" />
@@ -22,16 +50,16 @@ const Login = () => {
                                 </picture>
                             </div>
                             <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                                <form>
+                                <form onSubmit={handleLoginUser}>
                                     {/* <!-- Email input --> */}
                                     <div className="form-outline mb-4">
-                                        <input type="email" id="form1Example13" className="form-control form-control-lg" />
+                                        <input type="email" id="form1Example13" className="form-control form-control-lg" required onChange={e => setEmail(e.target.value)} />
                                         <label className="form-label" htmlFor="form1Example13">Email address</label>
                                     </div>
 
                                     {/* <!-- Password input --> */}
                                     <div className="form-outline mb-4">
-                                        <input type="password" id="form1Example23" className="form-control form-control-lg" />
+                                        <input type="password" id="form1Example23" className="form-control form-control-lg" required onChange={e => setPassword(e.target.value)} />
                                         <label className="form-label" htmlFor="form1Example23">Password</label>
                                     </div>
 
