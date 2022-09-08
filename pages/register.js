@@ -31,7 +31,12 @@ const Register = () => {
             body: JSON.stringify(userInfo)
         })
             .then(res => res.json())
-            .then(data => setRedirect(data.success))
+            .then(data => {
+                if (data.success) {
+                    setRedirect(true);
+                    localStorage.setItem("accessToken", data.accessToken);
+                }
+            })
             .catch(error => console.log(error))
 
         event.target.reset();
