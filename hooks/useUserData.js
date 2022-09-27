@@ -2,7 +2,7 @@ import useSWR from 'swr';
 
 function useUserData() {
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data, error } = useSWR("http://localhost:5000/users", fetcher, {
+    const { data, error } = useSWR("https://next-node-chat-server.onrender.com/users", fetcher, {
         revalidateOnFocus: true,
         refreshWhenHidden: true,
         refreshWhenOffline: true,

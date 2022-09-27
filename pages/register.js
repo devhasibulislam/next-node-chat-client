@@ -22,7 +22,7 @@ const Register = () => {
             gender
         }
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://next-node-chat-server.onrender.com/users", {
             method: "POST",
             headers: {
                 "accept": "application/json",

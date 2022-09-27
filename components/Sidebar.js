@@ -16,7 +16,7 @@ const Sidebar = () => {
     const { data, loading } = useUserData();
 
     function handleRemoveUser(id) {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://next-node-chat-server.onrender.com/users/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

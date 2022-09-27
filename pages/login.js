@@ -13,7 +13,7 @@ const Login = () => {
         const userInfo = {
             email, password
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://next-node-chat-server.onrender.com/users", {
             method: "PATCH",
             headers: {
                 "accept": "application/json",

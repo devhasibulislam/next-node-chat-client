@@ -24,7 +24,7 @@ const UserID = () => {
             message: event.target.message.value
         };
 
-        fetch("http://localhost:5000/chats", {
+        fetch("https://next-node-chat-server.onrender.com/chats", {
             method: "POST",
             headers: {
                 "accept": "application/json",
@@ -42,7 +42,7 @@ const UserID = () => {
     const { data: chatsData, loading: chatsloading } = useChatData();
 
     function handleDeleteMessage(id) {
-        fetch(`http://localhost:5000/chats/${id}`, {
+        fetch(`https://next-node-chat-server.onrender.com/chats/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
